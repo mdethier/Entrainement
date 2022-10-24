@@ -17,7 +17,7 @@ console.log( nombre1 + cdc1);
 
 
 const nombreConst = 10 ;
-let nombreConst = 11 ;
+
 console.log(nombreConst);
 
 // La console indique une erreur et précise que la constante a bien été déjà déclarée //
