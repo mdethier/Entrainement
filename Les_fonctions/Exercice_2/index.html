@@ -10,11 +10,29 @@
     <script>
 
         const groupe = [42, 67, 46, 39, 72, 55, 39, 64, 44];
-        function moyenne(groupe) {
-            let moyenne = numAverage(groupe);
-            return moyenne;
+        let start=0;
+        function calculMoyenne() {
+        for (i = 0; i < groupe.length ; i++) {
+            start = start + groupe[i];
+            }
+        let moyenne = start/groupe.length;
+        return moyenne ;
+    }
+       console.log(calculMoyenne());
+
+       function calculYounger () { 
+        let younger = groupe.sort();
+        return younger[0];
+    }
+        console.log(calculYounger());
+
+        function calculOlder () {
+        let older = groupe.reverse(); 
+        return older[0]; 
         }
-        console.log(moyenne);
+        console.log(calculOlder());
+      
+      // console.log("Le plus âgé a "+older[0]+ " ans"); */
 
     </script>
 </body>
