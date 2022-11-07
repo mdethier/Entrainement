@@ -4,3 +4,22 @@
 
 // On affiche ensuite le texte qui remplace le titre Chifoumi et le bouton Rejouer devient cliquable et permet de réinitialiser les cartes de droite et de gauche sur leur image initiale, en réaffichant le titre Chifoumi.
 
+let joueeGauche = document.getElementById("image-gauche");
+let joueeDroite = document.getElementById("image-droite");
+let aleatoire = ["pierre","feuille","ciseau"];
+
+let aleatoireGauche;
+let aleatoireDroite;
+
+joueeGauche.addEventListener("click", (event) => {
+   aleatoireGauche = Math.floor(Math.random()*aleatoire.length);
+    joueeGauche.style.backgroundImage = "url(./images-pfc/"+aleatoire[aleatoireGauche]+ ".jpg)" ;
+
+});
+joueeDroite.addEventListener("click", (event) => {
+    aleatoireDroite = Math.floor(Math.random()*aleatoire.length);
+     joueeDroite.style.backgroundImage = "url(./images-pfc/"+aleatoire[aleatoireDroite]+ ".jpg)" ;
+});
+
+
+
