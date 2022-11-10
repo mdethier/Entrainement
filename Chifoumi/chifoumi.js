@@ -1,25 +1,109 @@
-// On veut que lorsque l'image de gauche ou de droite soit cliquée, cette image soit remplacée aléatoirement par l'une des images fournies, avec une transition exprimée en millisecondes.
-
-// Ensuite, on souhaite que l'ordinateur compare les deux images selon le schéma du chifoumi, à savoir : la pierre bat les ciseaux, les ciseaux battent la feuille, la feuille bat la pierre, et dans le cas de la même image, il y a égalité.
-
-// On affiche ensuite le texte qui remplace le titre Chifoumi et le bouton Rejouer devient cliquable et permet de réinitialiser les cartes de droite et de gauche sur leur image initiale, en réaffichant le titre Chifoumi.
 
 let joueeGauche = document.getElementById("image-gauche");
 let joueeDroite = document.getElementById("image-droite");
-let aleatoire = ["pierre","feuille","ciseau"];
+let figures = ["pierre", "feuille", "ciseau"];
 
 let aleatoireGauche;
 let aleatoireDroite;
+let titre = document.getElementById("titre");
+let gauche = document.getElementById("gauche");
+let droite = document.getElementById("droite");
+let rejouer = document.getElementById("boutonRejouer");
+
+
+rejouer.style.display = "none";
+ 
 
 joueeGauche.addEventListener("click", (event) => {
-   aleatoireGauche = Math.floor(Math.random()*aleatoire.length);
-    joueeGauche.style.backgroundImage = "url(./images-pfc/"+aleatoire[aleatoireGauche]+ ".jpg)" ;
+    let aleatoire = Math.floor(Math.random() * figures.length);
+    joueeGauche.style.backgroundImage = "url(./images-pfc/" + figures[aleatoire] + ".jpg)";
+    joueeGauche.style.pointerEvents = "none";
+   aleatoireGauche = figures[aleatoire];
+   verifEgalite();
+   
+
 
 });
 joueeDroite.addEventListener("click", (event) => {
-    aleatoireDroite = Math.floor(Math.random()*aleatoire.length);
-     joueeDroite.style.backgroundImage = "url(./images-pfc/"+aleatoire[aleatoireDroite]+ ".jpg)" ;
+    let aleatoire = Math.floor(Math.random() * figures.length);
+    joueeDroite.style.backgroundImage = "url(./images-pfc/" + figures[aleatoire] + ".jpg)";
+    joueeDroite.style.pointerEvents = "none";
+    aleatoireDroite = figures[aleatoire];
+    verifEgalite();
+    
+
+   
+    
 });
 
+function verifEgalite () {
+    if (aleatoireGauche == aleatoireDroite) {
+        titre.textContent = "Egalité";
+        gauche.style.backgroundColor = "purple";
+        droite.style.backgroundColor = "purple";
+        rejouer.style.display = 'initial';
 
+        
+    } else if (aleatoireGauche == "pierre" && aleatoireDroite == "ciseau") {
+        
+        titre.textContent = "Les pierres ont gagné";
+        gauche.style.backgroundColor = "green";
+        droite.style.backgroundColor = "red";
+        rejouer.style.display = 'initial';
 
+    } else if (aleatoireGauche == "ciseau" && aleatoireDroite == "feuille") {
+        
+        titre.textContent = "Les ciseaux ont gagné";
+        gauche.style.backgroundColor = "green";
+        droite.style.backgroundColor = "red";
+        rejouer.style.display = 'initial';
+    }
+    else if (aleatoireGauche == "feuille" && aleatoireDroite == "pierre") {
+        
+        titre.textContent = "Les feuilles ont gagné";
+        gauche.style.backgroundColor = "green";
+        droite.style.backgroundColor = "red";
+        rejouer.style.display = 'initial';
+    }
+    else if (aleatoireDroite == "pierre" && aleatoireGauche == "ciseau") {
+        
+        titre.textContent = "Les pierres ont gagné";
+        droite.style.backgroundColor = "green";
+        gauche.style.backgroundColor = "red";
+        rejouer.style.display = 'initial';
+
+    } else if (aleatoireDroite == "ciseau" && aleatoireGauche == "feuille") {
+        
+        titre.textContent = "Les ciseaux ont gagné";
+        droite.style.backgroundColor = "green";
+        gauche.style.backgroundColor = "red";
+        rejouer.style.display = 'initial';
+
+     } else if (aleatoireDroite == "feuille" && aleatoireGauche == "pierre") {
+        
+            titre.textContent = "Les feuilles ont gagné";
+            droite.style.backgroundColor = "green";
+            gauche.style.backgroundColor = "red";
+            rejouer.style.display = 'initial';
+        }
+        
+    };
+    rejouer.addEventListener('click', (event) => {
+        initialisation();
+
+    });
+    function initialisation() {
+        joueeGauche.style.backgroundImage = "url(./images-pfc/depart.jpg)";
+        joueeDroite.style.backgroundImage = "url(./images-pfc/depart.jpg)";
+        rejouer.style.display = "none";
+        titre.textContent = "Chifoumi";
+        gauche.style.backgroundColor = "white";
+        droite.style.backgroundColor = "white";
+        joueeGauche.style.pointerEvents = "initial";
+        joueeDroite.style.pointerEvents = "initial";
+        aleatoireGauche = "";
+        aleatoireDroite = "";
+        
+
+    }
+    
