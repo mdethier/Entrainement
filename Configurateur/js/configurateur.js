@@ -120,6 +120,16 @@ optionsPoche.forEach(poche => {
     
 });
 
+// TEXTE PERSONNALISE 
+
+// On va aller chercher les couleurs possibles pour la couleur de texte, puis créer les RoundColor comme on a pu faire précédemment, seulement on veut que lorsque la case Oui est coché, les couleurs deviennent clickables ainsi que l'input texte actif
+// On veut aussi que lorsque la case Non est cochée, rien de tout cela n'apparaisse
+// Il faudra également faire en sorte que le texte écrit soit visible directement sur le tablier
+// On s'occupera à la fin de la fonction pour calculer le prix à chaque changement d'option, que ce soit tissu, poche, et nombre de caractères.
+
+
+
+
 
 
 

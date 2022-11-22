@@ -1,0 +1,48 @@
+body {
+    background-color: #012060;
+
+    
+}
+.containerBackground {
+text-align: center;
+margin: auto;
+
+}
+.containerNombres {
+    background-color: #012060;
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.rond {
+    background-color: white;
+    font-size: 20px;
+    margin: 15px;
+    border: solid 5px yellow;
+    padding: 35px;
+    border-radius: 100%;
+    
+}
+.etoile {
+    
+    background-image:url('/images/euml-star.svg');
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+   
+    
+    
+    
+}
