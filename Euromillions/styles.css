@@ -9,7 +9,8 @@ margin: auto;
 
 }
 .containerNombres {
-    background-color: #012060;
+    background-color: white;
+    border-radius: 20px;
     position: absolute;
     top: 70%;
     left: 25%;
@@ -27,22 +28,26 @@ margin: auto;
     background-color: white;
     font-size: 20px;
     margin: 15px;
-    border: solid 5px yellow;
-    padding: 35px;
-    border-radius: 100%;
+    border: solid 5px gold;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
     
 }
 .etoile {
     
     background-image:url('/images/euml-star.svg');
     background-size: cover;
+    font-size: 20px;
     width: 80px;
     height: 80px;
     display: flex;
     justify-content: center;
     margin: 15px;
+    visibility: hidden;
    
-    
-    
     
 }
